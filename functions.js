@@ -1,5 +1,7 @@
-var roastCount
-function roastMarshmellow() {
-     roastCount +=1;
-     return roastCount;
+const content = 0;
+
+function countMarsh() {
+    content += 1;
 }
+
+FileSystem.writeFile('marshmellow.txt', content)

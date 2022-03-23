@@ -14,14 +14,23 @@
     </div>
 
     <div>
-      <form action="" method="post" id='myForm'>
-        <input type="submit" value="VALUE1" name="action1"/>
-    </form>
-        <button class="button" id="stargaze">Stargaze</button>
+        <button class="button" id="stargaze" >Stargaze</button>
+        <button class="button" id="roast"onclick="countMarsh()">Roast Marshmellows</button> 
     </div>
     <div>
     </form>
     </div>
+
+    <script>
+      const content = 0;
+
+      function countMarsh() {
+        content += 1;
+    }
+
+      FileSystem.writeFile('marshmellow.txt', content)
+
+    </script>
     </body>
 
 
@@ -33,7 +42,7 @@
 <style>
     body{
 text-align:center;
-background-color:black;
+background-color: black;
 background-image:url(https://i.imgur.com/rjikcP1.png);
 background-position: center;
 background-repeat: no-repeat;
