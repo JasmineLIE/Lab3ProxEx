@@ -1,0 +1,15 @@
+Bird
+Squirrel
+Bear
+Hydra
+Serpent
+Fish
+Flower
+Comet
+Woman
+Man
+Scorpion
+Lion
+Meteor
+Ladybug
+Arrow
