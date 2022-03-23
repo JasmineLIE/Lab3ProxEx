@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response, request
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -8,16 +8,6 @@ app = Flask(__name__)
 
 
 def index():
-   
-    # Load current count
-    f = open("marshmellow.txt", "r")
-    marshmellowCount = int(f.read())
-    f.close()
-    
-    # Overwrite the count
-    f = open("marshmellow.txt", "w")
-    f.write(str(count))
-    f.close()
 
 
     # Load current count
@@ -35,7 +25,7 @@ def index():
     f.close()
 
     # Render HTML with count variable
-    return render_template("index.html", count=count, marshmellowCount=marshmellowCount)
+    return render_template("index.html", count=count)
 
 
 if __name__ == "__main__":
