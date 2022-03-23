@@ -9,18 +9,22 @@ app = Flask(__name__)
 def index():
    
 
-    m = open("marshmellow.txt", "r")
-    marshmellowCount = int(m.read())
-    m.close()
 
-    @app.route("/roast/", methods=['POST'])
-    def roastButtonClick():
-        marshmellowCount +=1
-        return render_template('index.html', marshmellowCount=marshmellowCount)
 
-    m - open("marshmellow.txt", "w")
-    m.write(str(marshmellowCount))
-    m.close()
+    @app.route("/", methods=['GET', 'POST'])
+    def index():
+        if request.method == 'POST':
+            m = open("marshmellow.txt", "r")
+            marshmellowCount = int(m.read())
+            m.close()
+            marshmellowCount+=1
+            m = open("marshmellow.txt", "w")
+            m.write(str(marshmellowCount))
+            m.close()
+        return render_template("index.html", marshmellowCount=marshmellowCount)
+    
+
+
 
     # Load current count
     f = open("count.txt", "r")
@@ -42,3 +46,4 @@ def index():
 
 if __name__ == "__main__":
     app.run()
+
