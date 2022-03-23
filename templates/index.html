@@ -15,12 +15,14 @@
 
     <div>
         <button class="button" id="roastBtn" >Roast Marshmellows</button>
-            <button type='button' class="button" onclick="toggleText()">Stargaze</button>
+          <input type ="submit" name = "starGazeButton" class="button" value="Gaze"onclick="toggleText()">Stargaze>
     </div>
     <div>
       <h2 id='stargaze'  style='display: none'>You Saw {{ user_stargaze }} !</h2> 
     </div>
     </body>
+
+<! –– Toggle Text Script! ––>
 <script>
 function toggleText() {
   var text = document.getElementById("stargaze");
@@ -30,8 +32,9 @@ function toggleText() {
     text.style.display = "none";
   }
 }
-</script>
 
+</script>
+<! –– Toggle Text Script! ––>
 </html> 
 
 

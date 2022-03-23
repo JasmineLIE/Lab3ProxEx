@@ -15,7 +15,7 @@ with open('stars_adjectives.txt', 'r') as t:
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 
 
 def index():
@@ -38,6 +38,7 @@ def index():
 #--------------USER VISITS-------------------
 
 #--------------STAR GAZING-------------------
+    
     f = open("user_stargaze.txt", "r")
     user_stargaze = str(f.read())
     f.close()
@@ -48,11 +49,9 @@ def index():
     f.write(str(user_stargaze))
     f.close()
 
-    
     f = open("stargaze.txt", "r")
     stargaze = str(f.read())
     f.close()
-
     
     
     if count%2==0:
@@ -60,8 +59,13 @@ def index():
         f.write(str(user_stargaze))
         f.close()
 
-
 #--------------STAR GAZING-------------------
+
+#--------------MARSHMELLOWS-------------------
+
+#--------------MARSHMELLOWS-------------------
+
+
 
     # Render HTML with count variable
     return render_template("index.html", count=count, user_stargaze=user_stargaze, stargaze=stargaze)
