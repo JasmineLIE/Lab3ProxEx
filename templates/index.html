@@ -10,12 +10,18 @@
 
     <div>
         <h2>{{ count }} People Have Visited The Campsite!</h2>
+        <h2> {{ marshmellowCount}} Marshmellows Have Been Roasted!</h2>
     </div>
 
     <div>
-        <button class="button" id="roast">Roast Marshmellows</button>
+        <form action="/roast/" methods="post">
+          <button name="roastMarsh" button class="button" type="submit">Roast Marshmellows</button>
+        </form>
         <button class="button" id="stargaze">Stargaze</button>
-        <button class="button" id="note">Leave A Note</button>
+        <button class="button" id="note">Leave A Note</button> 
+    </div>
+    <div>
+    </form>
     </div>
     </body>
 
@@ -67,7 +73,7 @@ font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
 font-size: 14px;
 font-weight: 400;
 line-height: 20px;
-margin: 325px 200px 200px 200px;
+margin: 150px 200px 200px 200px;
 overflow: visible;
 padding: 12px 40px;
 text-align: center;
