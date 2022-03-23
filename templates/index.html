@@ -9,13 +9,16 @@
       <h1> Welcome Back To Camp! </h1><br>
 
     <div>
-        <h2>{{ count }} People Have Visited The Campsite!</h2>
+        <h2>{{ marshmellow }} People Have Visited The Campsite!</h2>
         <h2> The Last Person Who Stargazed Saw {{ stargaze }} !</h2>
     </div>
-
+    <form method="post" action="/">
+      <input type="submit" value="VALUE1" name="action1"/>
+      <input type="submit" value="VALUE2" name="action2" />
+  </form>
     <div>
-        <button class="button" id="roastBtn" >Roast Marshmellows</button>
-          <input type ="submit" name = "starGazeButton" class="button" value="Gaze"onclick="toggleText()">Stargaze>
+
+       <input type ="submit" name = "starGazeButton" class="button" value="Star Gaze"onclick="toggleText()">
     </div>
     <div>
       <h2 id='stargaze'  style='display: none'>You Saw {{ user_stargaze }} !</h2> 
@@ -25,6 +28,7 @@
 <! –– Toggle Text Script! ––>
 <script>
 function toggleText() {
+
   var text = document.getElementById("stargaze");
   if (text.style.display === "none") {
     text.style.display = "block";
@@ -68,6 +72,17 @@ color: white;
 font: 500 40px 'Bitter';
 }
 
+label {
+  text-align: none;
+  text-shadow: -5px -5px 5px black, 1px 1px 0px rgba(0,0,0,0.8);
+
+color: white;
+font: 300 20px 'Bitter';
+}
+
+.selectButt{
+  
+}
 .button {
 appearance: button;
 background-color: #000;
@@ -82,7 +97,7 @@ font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
 font-size: 20px;
 font-weight: 400;
 line-height: 20px;
-margin: 150px 200px 200px 200px;
+margin: 150px 200px 100px 200px;
 overflow: visible;
 padding: 12px 40px;
 text-align: center;

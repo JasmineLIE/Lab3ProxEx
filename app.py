@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 import random
 
 starNouns = []
@@ -17,9 +17,10 @@ app = Flask(__name__)
 
 @app.route("/", methods=["POST", "GET"])
 
-
 def index():
 
+
+        
 #--------------USER VISITS-------------------
     # Load current count
     f = open("count.txt", "r")
@@ -29,12 +30,13 @@ def index():
 
     # Increment the count
     count += 1
-
-
-    # Overwrite the count
+    
     f = open("count.txt", "w")
     f.write(str(count))
     f.close()
+
+    # Overwrite the count
+
 #--------------USER VISITS-------------------
 
 #--------------STAR GAZING-------------------
@@ -63,12 +65,33 @@ def index():
 
 #--------------MARSHMELLOWS-------------------
 
+
 #--------------MARSHMELLOWS-------------------
 
+    f = open("marshmellow.txt", "r")
+    marshmellow = str(f.read())
+    f.close()
+    if request.method == 'POST':
+        if request.form.get('action1') == 'VALUE1':
 
+
+            marshmellow = "Sweet"
+    
+            f = open("marshmellow.txt", "w")
+            f.write(str(marshmellow))
+            f.close()
+        elif  request.form.get('action2') == 'VALUE2':
+            marshmellow = "Nothing"
+            f = open("marshmellow.txt", "w")
+            f.write(str(marshmellow))
+            f.close()
+    elif request.method == 'GET':
+
+        return render_template('index.html', count=count, user_stargaze=user_stargaze, stargaze=stargaze, marshmellow=marshmellow)
 
     # Render HTML with count variable
-    return render_template("index.html", count=count, user_stargaze=user_stargaze, stargaze=stargaze)
+    return render_template("index.html", count=count, user_stargaze=user_stargaze, stargaze=stargaze, marshmellow=marshmellow)
+
 
 
 if __name__ == "__main__":
