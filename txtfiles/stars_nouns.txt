@@ -13,3 +13,13 @@ Lion
 Meteor
 Ladybug
 Arrow
+Bee
+Dog
+Cow
+Lamb
+Monkey
+Horse
+Chicken
+Rooster
+Peacock
+Cat
