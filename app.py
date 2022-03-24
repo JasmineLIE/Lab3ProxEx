@@ -80,8 +80,23 @@ def index():
             f = open("smore.txt", "w")
             f.write(str(smore))
             f.close()
-        elif  request.form.get('action2') == 'VALUE2':
-            smore = "Nothing"
+        elif  request.form.get('action2') == 'Strawberry':
+            smore = "Strawberry"
+            f = open("smore.txt", "w")
+            f.write(str(smore))
+            f.close()
+        elif  request.form.get('action3') == 'Minty':
+            smore = "Minty"
+            f = open("smore.txt", "w")
+            f.write(str(smore))
+            f.close()
+        elif  request.form.get('action4') == 'Jumbo Marshmellow':
+            smore = "Jumbo Marshmellow"
+            f = open("smore.txt", "w")
+            f.write(str(smore))
+            f.close()
+        elif  request.form.get('action5') == 'Triple Chocolate':
+            smore = "Triple Chocolate"
             f = open("smore.txt", "w")
             f.write(str(smore))
             f.close()
