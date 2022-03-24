@@ -4,11 +4,11 @@ import random
 starNouns = []
 starAdjs = []
 
-with open('stars_nouns.txt', 'r') as f:
+with open('txtfiles/stars_nouns.txt', 'r') as f:
   for line in f:
     starNouns.append(line.strip())
 
-with open('stars_adjectives.txt', 'r') as t:
+with open('txtfiles/stars_adjectives.txt', 'r') as t:
   for line in t:
     starAdjs.append(line.strip())
 
@@ -23,7 +23,7 @@ def index():
         
 #--------------USER VISITS-------------------
     # Load current count
-    f = open("count.txt", "r")
+    f = open("txtfiles/count.txt", "r")
     count = int(f.read())
     f.close()
 
@@ -31,7 +31,7 @@ def index():
     # Increment the count
     count += 1
     
-    f = open("count.txt", "w")
+    f = open("txtfiles/count.txt", "w")
     f.write(str(count))
     f.close()
 
@@ -41,23 +41,23 @@ def index():
 
 #--------------STAR GAZING-------------------
     
-    f = open("user_stargaze.txt", "r")
+    f = open("txtfiles/user_stargaze.txt", "r")
     user_stargaze = str(f.read())
     f.close()
 
     user_stargaze = (starAdjs[random.randint(0, len(starAdjs)-1)]) + "\n" + (starNouns[random.randint(0, len(starNouns)-1)]) 
 
-    f = open("user_stargaze.txt", "w")
+    f = open("txtfiles/user_stargaze.txt", "w")
     f.write(str(user_stargaze))
     f.close()
 
-    f = open("stargaze.txt", "r")
+    f = open("txtfiles/stargaze.txt", "r")
     stargaze = str(f.read())
     f.close()
     
     
     if count%2==0:
-        f = open("stargaze.txt", "w")
+        f = open("txtfiles/stargaze.txt", "w")
         f.write(str(user_stargaze))
         f.close()
 
@@ -68,7 +68,7 @@ def index():
 
 
 
-    f = open("smore.txt", "r")
+    f = open("txtfiles/smore.txt", "r")
     smore = str(f.read())
     f.close()
     if request.method == 'POST':
@@ -77,27 +77,27 @@ def index():
 
             smore = "Graham Classic"
     
-            f = open("smore.txt", "w")
+            f = open("txtfiles/smore.txt", "w")
             f.write(str(smore))
             f.close()
         elif  request.form.get('action2') == 'Strawberry':
             smore = "Strawberry"
-            f = open("smore.txt", "w")
+            f = open("txtfiles/smore.txt", "w")
             f.write(str(smore))
             f.close()
         elif  request.form.get('action3') == 'Minty':
             smore = "Minty"
-            f = open("smore.txt", "w")
+            f = open("txtfiles/smore.txt", "w")
             f.write(str(smore))
             f.close()
         elif  request.form.get('action4') == 'Jumbo Marshmellow':
             smore = "Jumbo Marshmellow"
-            f = open("smore.txt", "w")
+            f = open("txtfiles/smore.txt", "w")
             f.write(str(smore))
             f.close()
         elif  request.form.get('action5') == 'Triple Chocolate':
             smore = "Triple Chocolate"
-            f = open("smore.txt", "w")
+            f = open("txtfiles/smore.txt", "w")
             f.write(str(smore))
             f.close()
     elif request.method == 'GET':
