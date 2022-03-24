@@ -1,125 +1,188 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Moonlit Camp!</title>
-    </head>
 
-    
-  <body>
-      <h1> Welcome Back To Camp! </h1><br>
+<head>
+  <title>The Moonlit Camp!</title>
+</head>
 
-    <div>
-        <h2>{{ marshmellow }} People Have Visited The Campsite!</h2>
-        <h2> The Last Person Who Stargazed Saw {{ stargaze }} !</h2>
-    </div>
+
+<body>
+  <h1> Welcome Back To Camp! </h1><br>
+
+  <div>
+    <h3>{{ count }} People Have Visited The Campsite!</h3>
+    <h3> The Last Person Who Stargazed Saw {{ stargaze }} !</h3>
+    <h3> Someone Left A {{ smore }} For You!</h3>
+  </div>
+  <div>
     <form method="post" action="/">
-      <input type="submit" value="VALUE1" name="action1"/>
-      <input type="submit" value="VALUE2" name="action2" />
-  </form>
-    <div>
+      <input type="submit" value="Classic Graham" class="button" name="action1" onclick="smore1()" />
+      <input type="submit" value="Strawberry" class="button" name="action2" onclick="smore2()" />
+      <input type="submit" value="Minty" class="button" name="action3" onclick="smore3()" />
+      <input type="submit" value="Jumbo Marshmellow" class="button" name="action4" onclick="smore4()" />
+      <input type="submit" value="Triple Chocolate" class="button" name="action5" onclick="smore5()" />
+    </form>
+    <br>
+    <h3> Leave a Smore For Someone Else!</h3>
+  </div>
+  <img id="image" src="https://i.imgur.com/4oayP8E.png" />
+  <div>
 
-       <input type ="submit" name = "starGazeButton" class="button" value="Star Gaze"onclick="toggleText()">
-    </div>
-    <div>
-      <h2 id='stargaze'  style='display: none'>You Saw {{ user_stargaze }} !</h2> 
-    </div>
-    </body>
+    <input type="submit" name="starGazeButton" class="button" value="Star Gaze" onclick="toggleText()">
+  </div>
+  <div>
+    <h2 id='stargaze' style='display: none'>You Saw {{ user_stargaze }} !</h2>
+  </div>
+</body>
 
-<! –– Toggle Text Script! ––>
-<script>
-function toggleText() {
 
-  var text = document.getElementById("stargaze");
-  if (text.style.display === "none") {
-    text.style.display = "block";
-  } else {
-    text.style.display = "none";
-  }
-}
 
-</script>
-<! –– Toggle Text Script! ––>
-</html> 
+
+<! –– Scripts! ––>
+  <script>
+    function toggleText() {
+
+      var text = document.getElementById("stargaze");
+      if (text.style.display === "none") {
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    }
+
+  </script>
+
+  <script>
+    function smore1() {
+
+      image.src="https://i.imgur.com/ti8elSg.png"
+
+    }
+  </script>
+
+  <script>
+    function smore2() {
+
+      image.src="https://i.imgur.com/a2IXyHO.png"
+    
+    }
+  </script>
+
+  <script>
+    function smore3() {
+
+      image.src="https://i.imgur.com/92u5IHi.png"
+    
+    }
+  </script>
+
+  <script>
+    function smore4() {
+
+      image.src="https://i.imgur.com/5vAo17c.png"
+    
+    }
+  </script>
+
+  <script>
+    function smore5() {
+
+      image.src = "https://i.imgur.com/xU6Frkz.png"
+    
+    }
+  </script>
+  <! –– Scripts ! ––>
+
+</html>
 
 
 <! –– Watch out, We're Stylin' Here! ––>
 
-<style>
-    body{
-text-align:center;
-background-color: black;
-background-image:url(https://i.imgur.com/rjikcP1.png);
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
+  <style>
+    body {
+      text-align: center;
+      background-color: black;
+      background-image: url(https://i.imgur.com/rjikcP1.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
 
-}
+    }
 
-h1 {
-margin:auto;
-  text-align: center;
-  text-shadow: -5px -5px 5px black, 1px 1px 0px rgba(0,0,0,0.8);
-  color: white;
-  font: 700 80px 'Bitter';
-}
+    h1 {
+      margin: auto;
+      text-align: center;
+      text-shadow: -5px -5px 5px black, 1px 1px 0px rgba(0, 0, 0, 0.8);
+      color: white;
+      font: 700 80px 'Bitter';
+    }
 
-h2 {
-margin:auto;
-text-align: center;
-text-shadow: -5px -5px 5px black, 1px 1px 0px rgba(0,0,0,0.8);
+    h2 {
+      margin: auto;
+      text-align: center;
+      text-shadow: -5px -5px 5px black, 1px 1px 0px rgba(0, 0, 0, 0.8);
 
-color: white;
-font: 500 40px 'Bitter';
-}
+      color: white;
+      font: 500 40px 'Bitter';
+    }
 
-label {
-  text-align: none;
-  text-shadow: -5px -5px 5px black, 1px 1px 0px rgba(0,0,0,0.8);
+    h3 {
+      margin: auto;
+      text-align: center;
+      text-shadow: -5px -5px 5px black, 1px 1px 0px rgba(0, 0, 0, 0.8);
 
-color: white;
-font: 300 20px 'Bitter';
-}
+      color: white;
+      font: 250 35px 'Bitter';
+    }
 
-.selectButt{
-  
-}
-.button {
-appearance: button;
-background-color: #000;
-border: 1px solid #000;
-border-radius: 4px;
-box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
-box-sizing: border-box;
-color: #fff;
-cursor: pointer;
-display: inline-block;
-font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
-font-size: 20px;
-font-weight: 400;
-line-height: 20px;
-margin: 150px 200px 100px 200px;
-overflow: visible;
-padding: 12px 40px;
-text-align: center;
-touch-action: manipulation;
-vertical-align: middle;
-white-space: nowrap;
-}
 
-.button:hover {
-background-color:purple;
-}
+    label {
+      text-align: none;
+      text-shadow: -5px -5px 5px black, 1px 1px 0px rgba(0, 0, 0, 0.8);
+
+      color: white;
+      font: 300 20px 'Bitter';
+    }
 
 
 
-.button:not([disabled]):active {
-box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-transform: translate(2px, 2px);
-}
+    .button {
+      appearance: button;
+      background-color: #000;
+      border: 1px solid #000;
+      border-radius: 4px;
+      box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 20px;
+      margin: 150px 50px 100px 50x;
+      overflow: visible;
+      padding: 12px 40px;
+      text-align: center;
+      touch-action: manipulation;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
 
-@media (min-width: 768px) {
-.button {
-  padding: 12px 50px;
-}
-}
-</style>
+    .button:hover {
+      background-color: purple;
+    }
+
+
+
+    .button:not([disabled]):active {
+      box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+      transform: translate(2px, 2px);
+    }
+
+    @media (min-width: 768px) {
+      .button {
+        padding: 12px 50px;
+      }
+    }
+  </style>

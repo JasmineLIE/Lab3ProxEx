@@ -63,34 +63,36 @@ def index():
 
 #--------------STAR GAZING-------------------
 
-#--------------MARSHMELLOWS-------------------
+#--------------SMORES-------------------
 
 
-#--------------MARSHMELLOWS-------------------
 
-    f = open("marshmellow.txt", "r")
-    marshmellow = str(f.read())
+
+    f = open("smore.txt", "r")
+    smore = str(f.read())
     f.close()
     if request.method == 'POST':
-        if request.form.get('action1') == 'VALUE1':
+        if request.form.get('action1') == 'Classic Graham':
 
 
-            marshmellow = "Sweet"
+            smore = "Graham Classic"
     
-            f = open("marshmellow.txt", "w")
-            f.write(str(marshmellow))
+            f = open("smore.txt", "w")
+            f.write(str(smore))
             f.close()
         elif  request.form.get('action2') == 'VALUE2':
-            marshmellow = "Nothing"
-            f = open("marshmellow.txt", "w")
-            f.write(str(marshmellow))
+            smore = "Nothing"
+            f = open("smore.txt", "w")
+            f.write(str(smore))
             f.close()
     elif request.method == 'GET':
 
-        return render_template('index.html', count=count, user_stargaze=user_stargaze, stargaze=stargaze, marshmellow=marshmellow)
+        
+        return render_template('index.html', count=count, user_stargaze=user_stargaze, stargaze=stargaze, smore=smore)
 
+#--------------SMORES-------------------
     # Render HTML with count variable
-    return render_template("index.html", count=count, user_stargaze=user_stargaze, stargaze=stargaze, marshmellow=marshmellow)
+    return render_template("index.html", count=count, user_stargaze=user_stargaze, stargaze=stargaze, smore=smore)
 
 
 
